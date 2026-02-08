@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James's Blog - Amazing Stories & Tips</title>
+    <meta name="description" content="Read James's thoughts on gaming, school life in Canada, and tech tips.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2574798161475025"
+        crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        /* Blog Specific Styles */
+        .blog-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        .blog-meta {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .blog-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .blog-excerpt {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <nav class="main-nav">
+        <div class="logo">MEMOIR</div>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="#" class="active">Blog</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle Theme">
+                <!-- Reuse SVG icons from index.html -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-header container">
+            <h1 class="fade-in-up">James's Blog</h1>
+            <p class="subtitle fade-in-up delay-1">Thoughts on Games, Life & Coding</p>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="content-ad">
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2574798161475025"
+                data-ad-slot="auto"
+                data-ad-format="horizontal"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section class="content-section" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="blog-grid">
+                    
+                    <!-- Article 1 -->
+                    <article class="blog-card fade-in-up delay-2">
+                        <div class="blog-content">
+                            <div class="blog-meta">Feb 07, 2026 • Gaming</div>
+                            <h2 class="blog-title">Why Genshin Impact is Actually Good for Kids (A 12-Year-Old's Perspective)</h2>
+                            <p class="blog-excerpt">Parents often worry about screen time, but Genshin taught me about world history, resource management, and team strategy. Here's why.</p>
+                        </div>
+                        <a href="posts/why-genshin-is-good.html" class="read-more">Read Article →</a>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card fade-in-up delay-2">
+                        <div class="blog-content">
+                            <div class="blog-meta">Feb 08, 2026 • Design</div>
+                            <h2 class="blog-title">Building Dreams: Why Minecraft is My Architecture School</h2>
+                            <p class="blog-excerpt">I want to be an architect. Minecraft Creative Mode is my training ground. Here's what Redstone taught me about engineering.</p>
+                        </div>
+                        <a href="posts/minecraft-architecture.html" class="read-more">Read Article →</a>
+                    </article>
+
+                    <!-- Placeholder for future -->
+                    <article class="blog-card fade-in-up delay-2" style="opacity: 0.5;">
+                        <div class="blog-content">
+                            <div class="blog-meta">Coming Soon • Education</div>
+                            <h2 class="blog-title">Math in Canada vs. China: My Experience</h2>
+                            <p class="blog-excerpt">I moved from Changsha to Toronto in 2018. The math class was... different. Very different.</p>
+                        </div>
+                        <span class="read-more">Coming Soon</span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 James. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
