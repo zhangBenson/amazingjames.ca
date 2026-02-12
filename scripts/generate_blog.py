@@ -38,12 +38,42 @@ def update_files(title, content):
     filepath = f"blog/posts/{filename}"
     
     # 1. 创建文章 HTML
+    # AdSense Script for Head
+    adsense_head = """
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2574798161475025"
+        crossorigin="anonymous"></script>
+    """
+
+    # Manual Ad Unit to insert
+    ad_unit = """
+    <!-- In-content Ad -->
+    <div class="content-ad">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2574798161475025"
+            data-ad-slot="auto"
+            data-ad-format="fluid"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    """
+
+    # Insert Ad Unit after the first paragraph (simple injection)
+    if "</p>" in content:
+        content_with_ad = content.replace("</p>", "</p>" + ad_unit, 1)
+    else:
+        content_with_ad = content + ad_unit
+
     template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - James's Blog</title>
+    {adsense_head}
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -61,7 +91,7 @@ def update_files(title, content):
                 <h1 class=\"post-title\">{title}</h1>
             </header>
             <div class=\"post-content text-block\">
-                {content}
+                {content_with_ad}
             </div>
             <div class=\"post-navigation\">
                 <a href=\"../index.html\" class=\"nav-link back\">Back to Blog</a>
