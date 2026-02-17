@@ -2,25 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://amazingjames.ca/</loc>
-        <lastmod>2026-02-08</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://amazingjames.ca/blog/index.html</loc>
-        <lastmod>2026-02-08</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://amazingjames.ca/blog/posts/polar-bear-survival.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://amazingjames.ca/blog/posts/teamwork-basketball-roblox.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://amazingjames.ca/blog/posts/basketball-three-point-physics.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://amazingjames.ca/blog/posts/genshin-piano-music.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://amazingjames.ca/blog/posts/roblox-obby-design.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://amazingjames.ca/blog/posts/why-genshin-is-good.html</loc>
-        <lastmod>2026-02-07</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://amazingjames.ca/blog/posts/minecraft-architecture.html</loc>
-        <lastmod>2026-02-08</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
