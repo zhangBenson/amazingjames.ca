@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Architecture - James's Website</title>
-    <meta name="description" content="Design & Engineering">
+    <title>{{title}} - James's Website</title>
+    <meta name="description" content="{{description}}">
     <meta name="author" content="James">
     
     <!-- Google AdSense (Auto Ads) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2574798161475025"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="{{root_path}}css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -28,12 +28,12 @@
             <span class="bar"></span>
         </button>
         <ul class="nav-links">
-            <li><a href="../../index.html#hero">Home</a></li>
-            <li><a href="../../index.html#about">About</a></li>
-            <li><a href="../../blog/index.html">Blog</a></li>
-            <li><a href="../../index.html#timeline">Timeline</a></li>
-            <li><a href="../../index.html#chapters">Chapters</a></li>
-            <li><a href="../../index.html#gallery">Gallery</a></li>
+            <li><a href="{{root_path}}index.html#hero">Home</a></li>
+            <li><a href="{{root_path}}index.html#about">About</a></li>
+            <li><a href="{{root_path}}blog/index.html">Blog</a></li>
+            <li><a href="{{root_path}}index.html#timeline">Timeline</a></li>
+            <li><a href="{{root_path}}index.html#chapters">Chapters</a></li>
+            <li><a href="{{root_path}}index.html#gallery">Gallery</a></li>
         </ul>
         <div class="nav-actions">
             <button class="theme-toggle" aria-label="Toggle Theme">
@@ -44,26 +44,7 @@
     </nav>
 
     <main class="main-content">
-        
-        <article class="blog-post container">
-            <header class="post-header">
-                <span class="post-date">February 8, 2026</span>
-                <h1 class="post-title">Building Dreams: Why Minecraft is My Architecture School</h1>
-                <div class="post-tags">
-                    <span class="tag">Minecraft</span>
-                    <span class="tag">Architecture</span>
-                    <span class="tag">Design</span>
-                </div>
-            </header>
-            <div class="post-content text-block">
-                <p>I want to be an architect. Minecraft Creative Mode is my training ground. Here's what Redstone taught me about engineering.</p>
-                <p>Building in Minecraft is not just about blocks. It's about scale, lighting, and how a space feels when you walk through it. I spend hours designing modern villas and futuristic skyscrapers.</p>
-            </div>
-            <div class="post-navigation">
-                <a href="../index.html" class="nav-link back">Back to Blog</a>
-            </div>
-        </article>
-
+        {{content}}
     </main>
 
     <footer>
@@ -72,6 +53,6 @@
         </div>
     </footer>
 
-    <script src="../../js/script.js"></script>
+    <script src="{{root_path}}js/script.js"></script>
 </body>
 </html>
