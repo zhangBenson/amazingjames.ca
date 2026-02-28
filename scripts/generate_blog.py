@@ -45,28 +45,6 @@ def update_files(title, content):
         crossorigin="anonymous"></script>
     """
 
-    # Manual Ad Unit to insert
-    ad_unit = """
-    <!-- In-content Ad -->
-    <div class="content-ad">
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-2574798161475025"
-            data-ad-slot="auto"
-            data-ad-format="fluid"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    """
-
-    # Insert Ad Unit after the first paragraph (simple injection)
-    if "</p>" in content:
-        content_with_ad = content.replace("</p>", "</p>" + ad_unit, 1)
-    else:
-        content_with_ad = content + ad_unit
-
     template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +69,7 @@ def update_files(title, content):
                 <h1 class=\"post-title\">{title}</h1>
             </header>
             <div class=\"post-content text-block\">
-                {content_with_ad}
+                {content}
             </div>
             <div class=\"post-navigation\">
                 <a href=\"../index.html\" class=\"nav-link back\">Back to Blog</a>
