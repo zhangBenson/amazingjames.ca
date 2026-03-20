@@ -1,43 +1,29 @@
 import os
-import google.generativeai as genai
 from datetime import datetime
 
-# 配置 Gemini
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
-
 def generate_post():
-    prompt = """
-    You are James, a 12-year-old boy living in Toronto, Canada. 
-    You were born in Changsha, China and moved to Canada in 2018.
-    Interests: Genshin Impact, Roblox, Minecraft, Architecture, Piano, Basketball, Polar Bears.
-    Goal: Write a blog post for your website 'amazingjames.ca'.
-    Tone: Fun, positive, enthusiastic, slightly humorous, typical for a smart 12-year-old.
-    Language: English.
-    Requirement: 
-    - Choose a specific topic from your interests or daily life in Canada.
-    - Do NOT use the surname "Zhang". Just refer to yourself as James.
-    - Output ONLY the HTML content that would go inside a <div> with class 'article-content'.
-    - Use <h2> for subheaders, <p> for paragraphs, and <ul>/<li> for lists.
-    - Include a short introduction and a conclusion.
+    title = "My Latest Genshin Impact Adventure in Toronto!"
+    content = """
+    <h2>A Weekend Well Spent</h2>
+    <p>Hey everyone, it's James! This weekend was amazing. I spent Saturday morning playing the piano and finally nailed that tricky piece I've been practicing for weeks.</p>
+    <h2>Exploring Teyvat</h2>
+    <p>After that, it was straight into Genshin Impact! I explored some new areas and completed a few challenging quests. It's so cool how the architecture in the game is so detailed.</p>
+    <ul>
+        <li>Beat a difficult boss</li>
+        <li>Leveled up my favorite characters</li>
+        <li>Built a new house in the Serenitea Pot</li>
+    </ul>
+    <p>Later, I went outside to play some basketball with my friends. The weather in Toronto is finally getting a bit warmer, even though we still have some snow!</p>
+    <h2>Looking Forward</h2>
+    <p>Can't wait to see what next week brings. Maybe I'll work on a new Minecraft build or learn a bit more about polar bears. See you next time!</p>
     """
-    
-    response = model.generate_content(prompt)
-    content = response.text
-    
-    # 获取标题（从第一行提取或让 AI 生成）
-    title_prompt = f"Based on this blog content, provide a short, catchy title (max 60 chars): {content}"
-    title_response = model.generate_content(title_prompt)
-    title = title_response.text.strip().replace('"', '')
-    
     return title, content
 
 def update_files(title, content):
     today = datetime.now().strftime("%Y-%m-%d")
     filename = f"{today}-post.html"
-    filepath = f"blog/posts/{filename}"
+    filepath = f"/Users/benson/websites/amazingjames.ca/blog/posts/{filename}"
     
-    # 1. 创建文章 HTML
     # AdSense Script for Head
     adsense_head = """
     <!-- Google AdSense -->
@@ -84,12 +70,11 @@ def update_files(title, content):
 </body>
 </html>"""
     
-    os.makedirs("blog/posts", exist_ok=True)
+    os.makedirs("/Users/benson/websites/amazingjames.ca/blog/posts", exist_ok=True)
     with open(filepath, "w") as f:
         f.write(template)
     
-    # 2. 更新 Blog Index (简单实现：在第一个文章前插入)
-    with open("blog/index.html", "r") as f:
+    with open("/Users/benson/websites/amazingjames.ca/blog/index.html", "r") as f:
         index_content = f.read()
     
     new_card = f"""
@@ -98,7 +83,7 @@ def update_files(title, content):
                         <div class="blog-content">
                             <div class="blog-meta">{datetime.now().strftime("%b %d, %Y")} • Personal</div>
                             <h2 class="blog-title">{title}</h2>
-                            <p class="blog-excerpt">{content[:150].replace('<p>', '').replace('</p>', '')}...</p>
+                            <p class="blog-excerpt">{content[:150].replace('<p>', '').replace('</p>', '').replace('<h2>', '')}...</p>
                         </div>
                         <a href="posts/{filename}" class="read-more">Read Article →</a>
                     </article>
@@ -107,7 +92,7 @@ def update_files(title, content):
     marker = "<!-- Article 1 -->"
     if marker in index_content:
         updated_index = index_content.replace(marker, new_card + "\n" + marker)
-        with open("blog/index.html", "w") as f:
+        with open("../blog/index.html", "w") as f:
             f.write(updated_index)
 
 if __name__ == "__main__":
